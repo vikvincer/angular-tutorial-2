@@ -27,7 +27,7 @@ export class AuthPage implements OnInit, OnDestroy {
   ngOnInit() {
     const uiConfig: firebaseui.auth.Config = {
       signInSuccessUrl: '',
-      
+      signInFlow: 'popup',
       signInOptions: [
         EmailAuthProvider.PROVIDER_ID,
         GoogleAuthProvider.PROVIDER_ID,
@@ -35,7 +35,7 @@ export class AuthPage implements OnInit, OnDestroy {
       callbacks: {
         signInSuccessWithAuthResult: (authResult, redirectUrl) => {
           const user = authResult.user;
-
+          
           // Get the ID token
           user.getIdToken().then((idToken: string) => {
             console.log('Firebase ID Token:', idToken);
