@@ -1,0 +1,46 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Dashboard Overview</h1>
+
+  <section class="dashboard-grid">
+    <!-- User Statistics Card -->
+    <div class="card user-stats-card">
+      <h2 class="card-title">User Statistics</h2>
+      <div class="stats-list">
+        <div class="stat-item">
+          <span class="stat-label">Total Users:</span>
+          <span class="stat-value">{{ userStats.totalUsers | number }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Active Users:</span>
+          <span class="stat-value">{{ userStats.activeUsers | number }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">New Signups Today:</span>
+          <span class="stat-value">{{ userStats.newSignupsToday }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity Card -->
+    <div class="card recent-activity-card">
+      <h2 class="card-title">Recent Activity</h2>
+      <ul class="activity-list">
+        <li *ngFor="let activity of recentActivities" class="activity-item">
+          <span class="activity-description">{{ activity.description }}</span>
+          <span class="activity-time">{{ activity.time }}</span>
+        </li>
+      </ul>
+      <button class="view-all-button">View All Activities</button>
+    </div>
+
+    <!-- Quick Links Card -->
+    <div class="card quick-links-card">
+      <h2 class="card-title">Quick Links</h2>
+      <div class="links-grid">
+        <a *ngFor="let link of quickLinks" [routerLink]="link.url" class="quick-link-item">
+          {{ link.name }}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
