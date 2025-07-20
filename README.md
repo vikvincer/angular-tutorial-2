@@ -100,3 +100,6 @@ This section outlines the next features to be implemented.
     - This component will inject the `UserService` and display the user's profile information.
 3.  **Routing**:
     - Add the `/profile` route to the routing configuration and protect it with the `authGuard`.
+
+## Sample
+https://businesscontacts-86db5.web.app/
