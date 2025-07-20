@@ -16,14 +16,12 @@ export class AuthPage implements OnInit, OnDestroy {
   ui: firebaseui.auth.AuthUI;
   isLoading: boolean = true;
 
-
   constructor(
     @Inject(FIREBASE_AUTH_SERVICE) private firebaseAuth: Auth,
     private router: Router,
     private ngZone: NgZone
   ) {
     this.ui = new firebaseui.auth.AuthUI(this.firebaseAuth);
-    console.log('AuthPage constructed. Current idToken in sessionStorage:', sessionStorage.getItem('idToken'));
   }
 
   ngOnInit() {
